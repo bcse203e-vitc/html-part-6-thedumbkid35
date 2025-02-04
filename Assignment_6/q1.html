@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two Variables</title>
+    <script>
+        function swapUsingArithmetic() {
+            let a = 5;
+            let b = 10;
+            console.log("Before Swap (Arithmetic): a =", a, ", b =", b);
+            a = a + b; 
+            b = a - b;
+            a = a - b; 
+            console.log("After Swap (Arithmetic): a =", a, ", b =", b);
+        }
+        function swapUsingXOR() {
+            let a = 5;
+            let b = 10;
+            console.log("Before Swap (XOR): a =", a, ", b =", b);
+            a = a ^ b;
+            b = a ^ b; 
+            a = a ^ b; 
+            console.log("After Swap (XOR): a =", a, ", b =", b);
+        }
+    </script>
+</head>
+<body>
+    <h1>Swap Two Variables Without Using a Third Variable</h1>
+    <button onclick="swapUsingArithmetic()">Swap Using Arithmetic</button>
+    <button onclick="swapUsingXOR()">Swap Using XOR</button>
+</body>
+</html>

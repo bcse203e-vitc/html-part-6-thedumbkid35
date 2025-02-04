@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Non-Repeating Character</title>
+</head>
+<body>
+    <h2>Find the First Non-Repeating Character</h2>
+    <input type="text" id="charInput" placeholder="Enter a string">
+    <button onclick="findNonRepeatingChar()">Find</button>
+    <p id="charResult"></p>
+
+    <script>
+        function findNonRepeatingChar() {
+            let str = document.getElementById("charInput").value;
+            for (let char of str) {
+                if (str.indexOf(char) === str.lastIndexOf(char)) {
+                    document.getElementById("charResult").innerText = "First Non-Repeating Character: " + char;
+                    return;
+                }
+            }
+            document.getElementById("charResult").innerText = "No non-repeating character found.";
+        }
+    </script>
+</body>
+</html>

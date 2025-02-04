@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find GCD</title>
+</head>
+<body>
+    <h2>Find GCD</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="findGCD()">Find GCD</button>
+    <p id="gcdResult"></p>
+
+    <script>
+        function gcd(a, b) {
+            return b == 0 ? a : gcd(b, a % b);
+        }
+        function findGCD() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            document.getElementById("gcdResult").innerText = "GCD: " + gcd(num1, num2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Even or Odd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        function checkEvenOrOdd() {
+            const number = parseInt(document.getElementById("number").value);
+            let result;
+
+            if (isNaN(number)) {
+                result = "Please enter a valid number.";
+            } else {
+                result = (number % 2 === 0) ? `${number} is Even` : `${number} is Odd`;
+            }
+
+            console.log(result);
+            document.getElementById("result").innerText = result;
+        }
+
+        function separateEvenAndOdd() {
+            const input = document.getElementById("arrayInput").value;
+            const numbers = input.split(',').map(num => parseInt(num.trim()));
+            const evenNumbers = [];
+            const oddNumbers = [];
+
+            numbers.forEach(num => {
+                if (!isNaN(num)) {
+                    if (num % 2 === 0) {
+                        evenNumbers.push(num);
+                    } else {
+                        oddNumbers.push(num);
+                    }
+                }
+            });
+
+            const result = {
+                even: evenNumbers,
+                odd: oddNumbers
+            };
+
+            console.log("Even Numbers:", result.even);
+            console.log("Odd Numbers:", result.odd);
+            document.getElementById("resultArray").innerText = `Even: ${result.even.join(', ')} | Odd: ${result.odd.join(', ')}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Check If a Number is Even or Odd</h1>
+    <div>
+        <h2>Single Number Check</h2>
+        <input type="number" id="number" placeholder="Enter a number">
+        <button onclick="checkEvenOrOdd()">Check</button>
+        <p id="result"></p>
+    </div>
+    <div>
+        <h2>Separate Even and Odd Numbers</h2>
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+        <button onclick="separateEvenAndOdd()">Separate</button>
+        <p id="resultArray"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find LCM</title>
+</head>
+<body>
+    <h2>Find LCM</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="findLCM()">Find LCM</button>
+    <p id="lcmResult"></p>
+
+    <script>
+        function gcd(a, b) {
+            return b == 0 ? a : gcd(b, a % b);
+        }
+        function findLCM() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let lcm = Math.abs(num1 * num2) / gcd(num1, num2);
+            document.getElementById("lcmResult").innerText = "LCM: " + lcm;
+        }
+    </script>
+</body>
+</html>

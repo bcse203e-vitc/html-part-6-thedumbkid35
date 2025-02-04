@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Second Smallest & Largest</title>
+</head>
+<body>
+    <h2>Find Second Smallest & Second Largest</h2>
+    <input type="text" id="numArrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="findSecondSmallestLargest()">Find</button>
+    <p id="secondResult"></p>
+
+    <script>
+        function findSecondSmallestLargest() {
+            let arr = document.getElementById("numArrayInput").value.split(",").map(Number);
+            let sortedArr = [...new Set(arr)].sort((a, b) => a - b);
+            if (sortedArr.length < 2) {
+                document.getElementById("secondResult").innerText = "Not enough elements.";
+            } else {
+                document.getElementById("secondResult").innerText = `Second Smallest: ${sortedArr[1]}, Second Largest: ${sortedArr[sortedArr.length - 2]}`;
+            }
+        }
+    </script>
+</body>
+</html>

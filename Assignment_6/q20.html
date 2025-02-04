@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Frequency</title>
+</head>
+<body>
+    <h2>Count Character Occurrences</h2>
+    <input type="text" id="freqInput" placeholder="Enter a string">
+    <button onclick="countCharacters()">Count</button>
+    <p id="freqResult"></p>
+
+    <script>
+        function countCharacters() {
+            let str = document.getElementById("freqInput").value;
+            let freq = {};
+            for (let char of str) {
+                freq[char] = (freq[char] || 0) + 1;
+            }
+            document.getElementById("freqResult").innerText = JSON.stringify(freq);
+        }
+    </script>
+</body>
+</html>

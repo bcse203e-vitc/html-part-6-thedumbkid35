@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Longest Word</title>
+</head>
+<body>
+    <h2>Find the Longest Word</h2>
+    <input type="text" id="sentenceInput" placeholder="Enter a sentence">
+    <button onclick="findLongestWord()">Find</button>
+    <p id="longestResult"></p>
+
+    <script>
+        function findLongestWord() {
+            let words = document.getElementById("sentenceInput").value.split(" ");
+            let longest = words.reduce((longest, word) => word.length > longest.length ? word : longest, "");
+            document.getElementById("longestResult").innerText = "Longest Word: " + longest;
+        }
+    </script>
+</body>
+</html>

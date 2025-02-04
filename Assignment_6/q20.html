@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Count</title>
+</head>
+<body>
+    <h2>Count the Occurrences of Each Character</h2>
+    <input type="text" id="charInput" placeholder="Enter a string">
+    <button onclick="countCharacters()">Count</button>
+
+    <script>
+        function countCharacters() {
+            let str = document.getElementById("charInput").value;
+            let count = {};
+            for (let char of str) {
+                count[char] = (count[char] || 0) + 1;
+            }
+            console.log("Character Count:", count);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort an Array</title>
+</head>
+<body>
+    <h2>Sort an Array Without Using .sort()</h2>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="sortArray()">Sort</button>
+
+    <script>
+        function sortArray() {
+            let input = document.getElementById("arrayInput").value;
+            let arr = input.split(",").map(Number);
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                }
+            }
+            console.log("Sorted Array:", arr);
+        }
+    </script>
+</body>
+</html>

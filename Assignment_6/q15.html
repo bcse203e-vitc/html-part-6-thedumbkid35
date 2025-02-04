@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Missing Number</title>
+    <script>
+        function findMissingNumber() {
+            const inputArray = JSON.parse(document.getElementById("missingNumberInput").value);
+            const n = inputArray.length + 1; // Since one number is missing
+            const expectedSum = (n * (n + 1)) / 2;
+            const actualSum = inputArray.reduce((acc, num) => acc + num, 0);
+            const missingNumber = expectedSum - actualSum;
+            console.log(`Missing Number: ${missingNumber}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Missing Number</h1>
+    <label for="missingNumberInput">Enter an array (e.g., [1, 2, 3, 5, 6]):</label>
+    <input type="text" id="missingNumberInput" />
+    <button onclick="findMissingNumber()">Find</button>
+</body>
+</html>

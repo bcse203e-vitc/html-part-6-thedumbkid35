@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Number to Binary</title>
+</head>
+<body>
+    <h2>Convert a Number to Binary</h2>
+    <input type="number" id="decimalInput" placeholder="Enter a number">
+    <button onclick="convertToBinary()">Convert</button>
+
+    <script>
+        function convertToBinary() {
+            let num = document.getElementById("decimalInput").value;
+            console.log("Binary:", Number(num).toString(2));
+        }
+    </script>
+</body>
+</html>
